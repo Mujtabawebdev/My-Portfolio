@@ -11,7 +11,7 @@ export function PortfolioHeader({ navItems }) {
     <header className={`site-header${isScrolled ? " scrolled" : ""}`}>
       <a className="brand" href="#top" aria-label="Muhammad Mujtaba Naveed home">
         <span className="brand-mark">M</span>
-        <span className="brand-name">Muhammad Mujtaba</span>
+        <span className="brand-name">Muhammad Mujtaba Naveed</span>
       </a>
 
       <button className="nav-toggle" type="button" aria-expanded={isOpen} aria-controls="site-nav" onClick={toggleNav}>

@@ -114,6 +114,7 @@ main > section:not(.hero)::before {
 .brand {
   display: inline-flex;
   align-items: center;
+  min-width: 0;
   gap: 10px;
   color: var(--text);
   font-family: "Space Grotesk", Inter, sans-serif;
@@ -1211,16 +1212,16 @@ footer p {
   .site-header {
     top: 12px;
     border-radius: 28px;
+    gap: 10px;
   }
 
   .brand-name {
-    max-width: 132px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: clamp(0.78rem, 3.3vw, 0.93rem);
   }
 
   .nav-toggle {
     display: block;
+    flex: 0 0 42px;
   }
 
   .site-nav {
@@ -1247,7 +1248,9 @@ footer p {
 
   .hero {
     min-height: auto;
-    padding-top: 108px;
+    margin-top: 28px;
+    padding-top: 126px;
+    gap: 28px;
   }
 
   .hero-orbit {
@@ -1282,8 +1285,23 @@ footer p {
 
   .floating-card {
     position: static;
-    width: fit-content;
-    margin-top: 14px;
+    display: flex;
+    width: 100%;
+    max-width: 520px;
+    align-items: center;
+    gap: 12px;
+    margin: 14px auto 0;
+    border-radius: 16px;
+    padding: 14px 16px;
+  }
+
+  .floating-card strong {
+    flex: 0 0 auto;
+    font-size: 1.45rem;
+  }
+
+  .floating-card span {
+    line-height: 1.25;
   }
 
   .hero-visual {
