@@ -423,12 +423,7 @@ h3 {
 }
 
 .showcase-indicator {
-  position: absolute;
-  right: 28px;
-  bottom: 26px;
-  z-index: 2;
-  display: flex;
-  gap: 7px;
+  display: none;
 }
 
 .showcase-indicator span {
