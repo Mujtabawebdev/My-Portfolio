@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FiMessageCircle } from "react-icons/fi";
 import ofcPic from "../../../assets/portfolio/ofc-pic.png";
 import petsVetaPreview from "../../../assets/portfolio/pets-veta-preview.svg";
 import pearlyxPreview from "../../../assets/portfolio/pearlyx-preview.svg";
@@ -35,6 +36,10 @@ export function HeroSection({ hero, stats }) {
           </a>
           <a className="btn btn-ghost" href={hero.secondaryAction.href} target="_blank" rel="noreferrer">
             {hero.secondaryAction.label}
+          </a>
+          <a className="btn btn-contact-icon" href="#contact" aria-label="Contact Mujtaba">
+            <FiMessageCircle aria-hidden="true" />
+            <span>Contact Us</span>
           </a>
         </div>
 

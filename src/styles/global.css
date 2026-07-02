@@ -342,6 +342,34 @@ h3 {
   background: rgba(79, 140, 255, 0.09);
 }
 
+.btn-contact-icon {
+  width: auto;
+  min-width: 138px;
+  padding: 12px 17px;
+  border-color: rgba(139, 92, 246, 0.42);
+  background:
+    linear-gradient(135deg, rgba(79, 140, 255, 0.16), rgba(139, 92, 246, 0.18)),
+    rgba(255, 255, 255, 0.035);
+  color: #ffffff;
+  box-shadow: 0 14px 34px rgba(79, 140, 255, 0.16);
+}
+
+.btn-contact-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-contact-icon span {
+  white-space: nowrap;
+}
+
+.btn-contact-icon:hover,
+.btn-contact-icon:focus-visible {
+  border-color: rgba(139, 92, 246, 0.72);
+  background: linear-gradient(135deg, #4f8cff, #8b5cf6);
+  color: #ffffff;
+}
+
 .availability-card {
   display: inline-flex;
   max-width: 620px;
@@ -1109,6 +1137,362 @@ footer p {
   margin: 0;
 }
 
+.portfolio-assistant {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  --assistant-bottom-space: 22px;
+  --assistant-top-space: 18px;
+  z-index: 30;
+  display: grid;
+  justify-items: end;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.assistant-panel,
+.assistant-launcher {
+  pointer-events: auto;
+}
+
+.assistant-panel {
+  display: grid;
+  grid-template-rows: auto minmax(190px, 1fr) auto auto;
+  width: min(430px, calc(100vw - 32px));
+  height: min(760px, calc(100vh - var(--assistant-top-space) - var(--assistant-bottom-space)));
+  max-height: min(760px, calc(100vh - var(--assistant-top-space) - var(--assistant-bottom-space)));
+  overflow: hidden;
+  border: 1px solid rgba(155, 89, 255, 0.34);
+  border-radius: 18px;
+  background: #141e28;
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.5), 0 0 34px rgba(155, 60, 255, 0.16);
+  backdrop-filter: blur(20px);
+}
+
+.assistant-header {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  border-bottom: 0;
+  padding: 20px 22px;
+  background: linear-gradient(135deg, #7c1cff, #b92dff);
+}
+
+.assistant-mark,
+.assistant-icon-btn,
+.assistant-launcher,
+.assistant-form button {
+  display: grid;
+  place-items: center;
+}
+
+.assistant-mark {
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(59, 130, 246, 0.38);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.45), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.35), transparent 40%),
+    linear-gradient(145deg, rgba(59, 130, 246, 0.18), rgba(79, 70, 229, 0.2)),
+    #070b18;
+  color: #ffffff;
+  box-shadow:
+    0 18px 40px rgba(79, 70, 229, 0.28),
+    0 0 36px rgba(59, 130, 246, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -18px 30px rgba(2, 6, 23, 0.28);
+}
+
+.assistant-mark .ai-sparkle-icon {
+  width: 39px;
+  height: 39px;
+}
+
+.assistant-mark .ai-sparkle-main {
+  width: 31px;
+}
+
+.assistant-mark .ai-sparkle-small {
+  width: 14px;
+}
+
+.ai-sparkle-icon {
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 34px;
+}
+
+.ai-sparkle-main,
+.ai-sparkle-small {
+  position: absolute;
+  display: block;
+  aspect-ratio: 1;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.72), transparent 16%),
+    radial-gradient(circle at 25% 70%, #ff3d6e, transparent 28%),
+    radial-gradient(circle at 76% 70%, #164bd8, transparent 32%),
+    linear-gradient(135deg, #ff65b5 0%, #9c5cff 32%, #28a7ff 62%, #f6a51d 100%);
+  clip-path: polygon(50% 0, 62% 31%, 100% 50%, 62% 69%, 50% 100%, 38% 69%, 0 50%, 38% 31%);
+  filter: drop-shadow(0 8px 14px rgba(54, 149, 255, 0.28));
+}
+
+.ai-sparkle-main {
+  top: 1px;
+  left: 1px;
+  width: 27px;
+}
+
+.ai-sparkle-small {
+  right: 0;
+  bottom: 1px;
+  width: 13px;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.75), transparent 14%),
+    linear-gradient(135deg, #f553a8, #7b6dff 42%, #ffb11f 100%);
+  filter: drop-shadow(0 5px 10px rgba(255, 164, 31, 0.34));
+}
+
+.assistant-header strong,
+.assistant-header em {
+  display: block;
+}
+
+.assistant-header strong {
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.assistant-header em {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.assistant-online-dot {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #37f5a0;
+}
+
+.assistant-icon-btn {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.assistant-icon-btn svg {
+  width: 25px;
+  height: 25px;
+}
+
+.assistant-icon-btn:hover,
+.assistant-icon-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  transform: rotate(8deg);
+}
+
+.assistant-messages {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 0;
+  max-height: none;
+  overflow-y: auto;
+  padding: 24px;
+  background: #141e28;
+}
+
+.assistant-message {
+  width: fit-content;
+  max-width: min(88%, 500px);
+  margin: 0;
+  border: 0;
+  border-radius: 18px;
+  padding: 18px 20px;
+  color: #e8edf6;
+  font-size: 1rem;
+  font-weight: 750;
+  line-height: 1.55;
+  box-shadow: none;
+}
+
+.assistant-message.assistant {
+  justify-self: start;
+  border-top-left-radius: 7px;
+  background: #101922;
+}
+
+.assistant-message.user {
+  justify-self: end;
+  border-top-right-radius: 7px;
+  background: linear-gradient(135deg, #7c1cff, #b92dff);
+  color: #ffffff;
+}
+
+.assistant-message.loading {
+  color: var(--muted);
+}
+
+.assistant-prompts {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 16px 2px;
+  background: #141e28;
+}
+
+.assistant-prompts::-webkit-scrollbar {
+  display: none;
+}
+
+.assistant-prompts button {
+  min-width: max-content;
+  min-height: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(170, 72, 255, 0.42);
+  border-radius: 999px;
+  padding: 7px 10px;
+  background: #101922;
+  color: #dbe4f2;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.15;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.assistant-prompts button:hover,
+.assistant-prompts button:focus-visible {
+  border-color: rgba(190, 88, 255, 0.8);
+  background: rgba(126, 31, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.assistant-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 22px 16px;
+  background: #101922;
+}
+
+.assistant-form input {
+  min-width: 0;
+  border: 1px solid #a42dff;
+  border-radius: 18px;
+  padding: 0 20px;
+  background: #0f1821;
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  outline: none;
+  box-shadow: none;
+}
+
+.assistant-form input:focus {
+  border-color: #c55cff;
+  background: #0d151d;
+}
+
+.assistant-form button,
+.assistant-launcher {
+  border: 0;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7c1cff, #b92dff);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.assistant-form button {
+  width: 72px;
+  height: 72px;
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(126, 31, 255, 0.3);
+}
+
+.assistant-form button svg {
+  width: 26px;
+  height: 26px;
+}
+
+.assistant-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.assistant-launcher {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  border: 1px solid rgba(59, 130, 246, 0.38);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.45), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.35), transparent 40%),
+    linear-gradient(145deg, rgba(59, 130, 246, 0.18), rgba(79, 70, 229, 0.2)),
+    #070b18;
+  box-shadow:
+    0 18px 40px rgba(79, 70, 229, 0.28),
+    0 0 46px rgba(59, 130, 246, 0.25),
+    0 0 64px rgba(79, 70, 229, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -18px 30px rgba(2, 6, 23, 0.28);
+  color: #ffffff;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.assistant-launcher:hover,
+.assistant-launcher:focus-visible {
+  box-shadow:
+    0 22px 48px rgba(79, 70, 229, 0.36),
+    0 0 54px rgba(59, 130, 246, 0.3),
+    0 0 76px rgba(79, 70, 229, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -18px 30px rgba(2, 6, 23, 0.26);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.assistant-launcher .ai-sparkle-icon {
+  width: 43px;
+  height: 43px;
+}
+
+.assistant-launcher .ai-sparkle-main {
+  width: 34px;
+}
+
+.assistant-launcher .ai-sparkle-small {
+  width: 16px;
+}
+
 @keyframes contactIn {
   from {
     opacity: 0;
@@ -1307,6 +1691,29 @@ footer p {
   .contact-actions .btn {
     width: 100%;
   }
+
+  .hero-actions .btn-contact-icon {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .portfolio-assistant {
+    right: 16px;
+    bottom: 16px;
+    --assistant-bottom-space: 16px;
+    --assistant-top-space: 76px;
+  }
+
+  .assistant-panel {
+    height: min(730px, calc(100vh - var(--assistant-top-space) - var(--assistant-bottom-space)));
+    max-height: calc(100vh - var(--assistant-top-space) - var(--assistant-bottom-space));
+    border-radius: 20px;
+  }
+
+  .assistant-messages {
+    min-height: 0;
+    max-height: none;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1332,5 +1739,24 @@ footer p {
   .contact-section {
     margin-right: 16px;
     margin-left: 16px;
+  }
+
+  .portfolio-assistant {
+    right: 12px;
+    bottom: 12px;
+    --assistant-bottom-space: 12px;
+    --assistant-top-space: 68px;
+  }
+
+  .assistant-panel {
+    width: calc(100vw - 24px);
+    height: min(700px, calc(100vh - var(--assistant-top-space) - var(--assistant-bottom-space)));
+    max-height: calc(100vh - var(--assistant-top-space) - var(--assistant-bottom-space));
+  }
+
+  .assistant-launcher {
+    width: 66px;
+    height: 66px;
+    border-radius: 24px;
   }
 }
