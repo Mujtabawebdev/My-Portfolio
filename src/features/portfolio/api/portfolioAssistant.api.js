@@ -4,7 +4,7 @@ const topicMap = [
   {
     keys: ["contact", "email", "phone", "call", "linkedin", "github", "hire", "available", "availability", "reach"],
     answer: () =>
-      `${portfolioData.hero.availability} Email: mujtabanaveed13@gmail.com. Phone: +92 317 0428715. GitHub: https://github.com/Mujtabawebdev. LinkedIn: https://linkedin.com/in/muhammad-mujtaba-dev.`,
+      `${portfolioData.hero.availability} Email: mujtabanaveed13@gmail.com. Phone: +92 317 0428715.`,
   },
   {
     keys: [
@@ -20,86 +20,84 @@ const topicMap = [
       "portfolio site",
       "dashboard",
       "dashboards",
-      "api",
-      "apis",
-      "rest",
-      "authentication",
-      "auth",
-      "upload",
-      "uploads",
       "responsive",
       "ecommerce",
       "fullstack",
       "full stack",
     ],
     answer: () =>
-      `Mujtaba is a MERN and PERN stack developer. He can build responsive websites, React frontend interfaces, full-stack web apps, admin dashboards, REST APIs, authentication systems, database workflows, file upload features, realtime features, and production-ready portfolio or business websites. His services include ${portfolioData.services
-        .map((service) => `${service.title}: ${service.description}`)
-        .join(" ")}`,
+      "I build scalable MERN/PERN full-stack web apps, business websites, dashboards, APIs, auth, uploads, and databases.",
   },
   {
     keys: ["project", "projects", "work", "portfolio", "built", "apps", "app", "application", "case study"],
     answer: () =>
-      `Mujtaba's main projects are ${portfolioData.projects
-        .map((project) => `${project.title}: ${project.description}`)
-        .join(" ")}`,
+      `Main projects: ${portfolioData.projects.map((project) => project.title).join(", ")}.`,
   },
   {
     keys: ["pets", "veta", "pet", "doctor", "vet", "marketplace", "booking", "appointment"],
     answer: () => {
       const project = portfolioData.projects.find((item) => item.title === "Pets Veta");
-      return `${project.title} is ${project.description} Stack: ${project.tags.join(", ")}.`;
+      return `${project.title}: ${project.description}`;
     },
   },
   {
     keys: ["instagram", "social", "clone", "realtime", "socket", "notification", "notifications"],
     answer: () => {
       const project = portfolioData.projects.find((item) => item.title === "Instagram Clone");
-      return `${project.title} is ${project.description} Stack: ${project.tags.join(", ")}.${project.repoUrl ? ` Repo: ${project.repoUrl}.` : ""}`;
+      return `${project.title}: ${project.description}`;
     },
   },
   {
     keys: ["student", "teacher", "school", "academic", "management", "portal"],
     answer: () => {
       const project = portfolioData.projects.find((item) => item.title === "Student & Teacher Management");
-      return `${project.title} is ${project.description} Stack: ${project.tags.join(", ")}.`;
+      return `${project.title}: ${project.description}`;
     },
   },
   {
-    keys: ["skill", "skills", "stack", "technology", "technologies", "frontend", "backend", "database", "mern", "pern", "tool", "tools"],
+    keys: ["database", "databases", "mongodb", "mongoose", "postgresql", "prisma", "redis"],
+    answer: () => "MongoDB, Mongoose, PostgreSQL, Prisma ORM, Redis.",
+  },
+  {
+    keys: ["rest api", "rest apis", "api", "apis", "routes", "controllers", "models"],
+    answer: () =>
+      "Yes, he can build REST APIs using Node.js and Express.js, including routes, controllers, models, authentication, and database integration.",
+  },
+  {
+    keys: ["skill", "skills", "stack", "technology", "technologies", "frontend", "backend", "mern", "pern", "tool", "tools"],
     answer: () => {
-      const frontend = portfolioData.skills.find((group) => group.title === "Frontend");
-      const backend = portfolioData.skills.find((group) => group.title === "Backend");
-      const tools = portfolioData.skills.find((group) => group.title === "Tools");
-
-      return [
-        "Mujtaba works with both MERN and PERN stack.",
-        "MERN means MongoDB, Express.js, React.js, and Node.js.",
-        "PERN means PostgreSQL, Express.js, React.js, and Node.js.",
-        `Frontend technologies: ${frontend.items.map((item) => item.name).join(", ")}.`,
-        `Backend technologies: ${backend.items.map((item) => item.name).join(", ")}.`,
-        "Databases: MongoDB, PostgreSQL, Mongoose, Prisma ORM, and Redis basics.",
-        `Tools and integrations: ${tools.items.map((item) => item.name).join(", ")}.`,
-      ].join(" ");
+      return "MERN/PERN full-stack web apps. Frontend: HTML5, CSS3, React.js, TypeScript, JavaScript, Tailwind CSS, Redux Toolkit, TanStack Query, React Router, Bootstrap. Backend: Node.js, Express.js, REST APIs, JWT, Bcrypt, Multer, Nodemailer, Socket.io, MongoDB, Mongoose, PostgreSQL, Prisma ORM, Redis.";
     },
   },
   {
     keys: ["experience", "job", "intern", "company", "qalam", "techwizard", "career", "role"],
     answer: () =>
       portfolioData.experience
-        .map((item) => `${item.role} at ${item.company} (${item.period}): ${item.description}`)
+        .map((item) => `${item.role} at ${item.company} (${item.period})`)
         .join(" "),
   },
   {
     keys: ["education", "degree", "university", "cgpa", "study", "qualification", "courses"],
     answer: () =>
-      portfolioData.education
-        .map((item) => `${item.degree}, ${item.institution} (${item.period})${item.meta ? `, ${item.meta}` : ""}. ${item.description}`)
-        .join(" "),
+      "Post ADP - Computer Science, University of Education, CGPA: 3.28 / 4.00. ADP - Computer Science, University of the Punjab.",
   },
 ];
 
 const defaultSuggestions = ["What services do you provide?", "Tell me about Pets Veta", "How can I contact him?"];
+const casualReplies = {
+  hello: "Hi! Ask me about Mujtaba.",
+  hi: "Hi! Ask me about Mujtaba.",
+  hey: "Hey! Ask me about Mujtaba.",
+  ok: "Okay.",
+  okay: "Okay.",
+  nice: "Nice!",
+  good: "Good!",
+  thanks: "You're welcome.",
+  thank: "You're welcome.",
+  bye: "Bye!",
+  yes: "Yes.",
+  no: "Okay.",
+};
 
 const portfolioRelatedKeywords = [
   "portfolio",
@@ -176,8 +174,12 @@ function isSimilarWord(word, keyword) {
     return false;
   }
 
-  if (word === keyword || word.includes(keyword) || keyword.includes(word)) {
-    return word.length >= 3 || keyword.length >= 3;
+  if (word === keyword) {
+    return true;
+  }
+
+  if (word.length >= 4 && keyword.length >= 4 && word.includes(keyword)) {
+    return true;
   }
 
   if (word.length < 4 || keyword.length < 4) {
@@ -203,10 +205,29 @@ function isPortfolioRelated(message) {
   return portfolioRelatedKeywords.some((keyword) => hasSimilarKeyword(message, keyword));
 }
 
+function getCasualReply(message) {
+  const words = getWords(message);
+
+  if (words.length > 3) {
+    return "";
+  }
+
+  const matchedWord = words.find((word) => casualReplies[word]);
+  return matchedWord ? casualReplies[matchedWord] : "";
+}
+
 function getPortfolioRelatedReply() {
   const featuredProjects = portfolioData.projects.map((project) => project.title).join(", ");
 
-  return `${portfolioData.hero.title} is a ${portfolioData.hero.subtitle}. He builds portfolio and business websites, React frontends, MERN/PERN full-stack apps, dashboards, REST APIs, authentication, uploads, database workflows, and realtime features. His main projects are ${featuredProjects}. Ask about services, stack, projects, experience, education, or contact details for a more specific answer.`;
+  return `${portfolioData.hero.title} is a ${portfolioData.hero.subtitle}. Main projects: ${featuredProjects}. Ask about services, stack, contact, or experience.`;
+}
+
+function getPriorityReply(message) {
+  if (message.includes("rest api") || message.includes("rest apis") || getWords(message).includes("apis")) {
+    return "Yes, he can build REST APIs using Node.js and Express.js, including routes, controllers, models, authentication, and database integration.";
+  }
+
+  return "";
 }
 
 export async function askPortfolioAssistant(message) {
@@ -214,8 +235,26 @@ export async function askPortfolioAssistant(message) {
 
   if (!normalizedMessage) {
     return {
-      reply: "Ask me about Mujtaba's projects, skills, experience, education, or contact details.",
+      reply: "Ask me about Mujtaba.",
       suggestions: defaultSuggestions,
+    };
+  }
+
+  const casualReply = getCasualReply(normalizedMessage);
+
+  if (casualReply) {
+    return {
+      reply: casualReply,
+      suggestions: defaultSuggestions,
+    };
+  }
+
+  const priorityReply = getPriorityReply(normalizedMessage);
+
+  if (priorityReply) {
+    return {
+      reply: priorityReply,
+      suggestions: ["Which stack does he use?", "What databases does he use?", "How can I contact him?"],
     };
   }
 
@@ -223,10 +262,7 @@ export async function askPortfolioAssistant(message) {
 
   if (matches.length > 0) {
     return {
-      reply: matches
-        .slice(0, 2)
-        .map((match) => match.answer())
-        .join(" "),
+      reply: matches[0].answer(),
       suggestions: ["What websites can you build?", "Which stack does he use?", "How can I contact him?"],
     };
   }
@@ -239,7 +275,7 @@ export async function askPortfolioAssistant(message) {
   }
 
   return {
-    reply: "I can answer questions about Mujtaba's portfolio, services, projects, stack, experience, education, and contact details. Please ask something related to his work.",
+    reply: "Please ask something about Mujtaba's work.",
     suggestions: defaultSuggestions,
   };
 }
