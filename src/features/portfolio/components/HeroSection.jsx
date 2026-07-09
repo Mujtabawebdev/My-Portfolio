@@ -1,16 +1,6 @@
 import { motion } from "framer-motion";
 import { FiMessageCircle } from "react-icons/fi";
 import ofcPic from "../../../assets/portfolio/ofc-pic.png";
-import petsVetaPreview from "../../../assets/portfolio/pets-veta-preview.svg";
-import pearlyxPreview from "../../../assets/portfolio/pearlyx-preview.svg";
-import studentTeacherPreview from "../../../assets/portfolio/student-teacher-preview.svg";
-
-const heroSlides = [
-  { src: ofcPic, alt: "Muhammad Mujtaba working at a laptop" },
-  { src: petsVetaPreview, alt: "Pets Veta project preview" },
-  { src: pearlyxPreview, alt: "Instagram Clone project preview" },
-  { src: studentTeacherPreview, alt: "Student Teacher Portal project preview" },
-];
 
 export function HeroSection({ hero, stats }) {
   const [experienceStat] = stats;
@@ -57,15 +47,7 @@ export function HeroSection({ hero, stats }) {
         transition={{ duration: 0.85, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="hero-showcase">
-          {heroSlides.map((slide, index) => (
-            <img
-              src={slide.src}
-              alt={slide.alt}
-              className="hero-slide"
-              key={slide.alt}
-              style={{ "--slide-index": index }}
-            />
-          ))}
+          <img src={ofcPic} alt="Muhammad Mujtaba working at a laptop" className="hero-slide" />
         </div>
         <div className="showcase-indicator" aria-hidden="true">
           <span></span>
