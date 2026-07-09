@@ -58,9 +58,9 @@ export const portfolioData = {
       title: "Pets Veta",
       initials: "PV",
       meta: "Full-stack pet care platform",
-      subtitle: "Marketplace - Appointments - AI Chat",
+      subtitle: "Marketplace - Appointments - Stripe Checkout",
       description:
-        "Pet care marketplace with e-commerce, vet appointment scheduling, admin analytics, role-based access, PostgreSQL, Prisma, JWT, and Cloudinary uploads.",
+        "Pet care marketplace with e-commerce, vet appointment scheduling, secure Stripe checkout for marketplace orders and appointment bookings, admin analytics, role-based access, PostgreSQL, Prisma, JWT, and Cloudinary uploads.",
       tags: [
         "React.js",
         "TypeScript",
@@ -72,6 +72,7 @@ export const portfolioData = {
         "PostgreSQL",
         "Prisma ORM",
         "JWT Authentication",
+        "Stripe",
         "Cloudinary",
       ],
       visualClass: "pets-gradient",

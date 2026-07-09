@@ -34,7 +34,7 @@ const topicMap = [
       `Main projects: ${portfolioData.projects.map((project) => project.title).join(", ")}.`,
   },
   {
-    keys: ["pets", "veta", "pet", "doctor", "vet", "marketplace", "booking", "appointment"],
+    keys: ["pets", "veta", "pet", "doctor", "vet", "marketplace", "booking", "appointment", "stripe", "payment", "checkout", "order", "orders"],
     answer: () => {
       const project = portfolioData.projects.find((item) => item.title === "Pets Veta");
       return `${project.title}: ${project.description}`;
@@ -121,6 +121,9 @@ const portfolioRelatedKeywords = [
   "api",
   "dashboard",
   "auth",
+  "stripe",
+  "payment",
+  "checkout",
   "upload",
   "responsive",
   "experience",
