@@ -41,6 +41,13 @@ const topicMap = [
     },
   },
   {
+    keys: ["med edge", "hospital", "patient", "patients", "doctor", "doctors", "clinical", "pharmacy"],
+    answer: () => {
+      const project = portfolioData.projects.find((item) => item.title === "Med Edge");
+      return `${project.title}: ${project.description}`;
+    },
+  },
+  {
     keys: ["instagram", "social", "clone", "realtime", "socket", "notification", "notifications"],
     answer: () => {
       const project = portfolioData.projects.find((item) => item.title === "Instagram Clone");

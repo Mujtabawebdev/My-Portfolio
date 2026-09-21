@@ -1,6 +1,7 @@
 import petsVetaPreview from "../../../assets/portfolio/pets-veta-preview.svg";
 import pearlyxPreview from "../../../assets/portfolio/pearlyx-preview.svg";
 import studentTeacherPreview from "../../../assets/portfolio/student-teacher-preview.svg";
+import medEdgePreview from "../../../assets/portfolio/med-edge-preview.png";
 
 export const portfolioData = {
   navItems: [
@@ -83,6 +84,27 @@ export const portfolioData = {
       image: petsVetaPreview,
       imageAlt: "Pets Veta homepage preview",
       featured: true,
+    },
+    {
+      title: "Med Edge",
+      initials: "ME",
+      meta: "Hospital management system",
+      subtitle: "Patients - Appointments - Clinical Operations",
+      description:
+        "A centralized hospital management platform for coordinating patients, doctors, appointments, rooms, billing, pharmacy workflows, and clinical records through role-focused dashboards and real-time operational insights.",
+      tags: [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST APIs",
+        "JWT Authentication",
+        "Role-based Access",
+        "Dashboard Analytics",
+      ],
+      visualClass: "med-edge-gradient",
+      image: medEdgePreview,
+      imageAlt: "Med Edge hospital management dashboard preview",
     },
     {
       title: "Instagram Clone",

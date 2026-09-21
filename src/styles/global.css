@@ -1021,6 +1021,7 @@ h3 {
 }
 
 .pets-gradient,
+.med-edge-gradient,
 .social-gradient,
 .academy-gradient {
   background: var(--surface-elevated);

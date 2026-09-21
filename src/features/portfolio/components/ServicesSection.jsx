@@ -17,7 +17,7 @@ export function ServicesSection({ services }) {
             <span>Years Full-stack Experience</span>
           </article>
           <article>
-            <strong>3+</strong>
+            <strong>4+</strong>
             <span>Production Projects</span>
           </article>
           <article>
