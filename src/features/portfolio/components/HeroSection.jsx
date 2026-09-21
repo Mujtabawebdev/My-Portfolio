@@ -34,7 +34,7 @@ export function HeroSection({ hero, stats }) {
             </motion.span>
           ))}
         </h1>
-        <p className="hero-subtitle">{hero.subtitle}</p>
+        {hero.subtitle ? <p className="hero-subtitle">{hero.subtitle}</p> : null}
         <p className="hero-text">{hero.description}</p>
 
         <motion.div

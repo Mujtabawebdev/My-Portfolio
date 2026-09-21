@@ -2,6 +2,7 @@ import petsVetaPreview from "../../../assets/portfolio/pets-veta-preview.svg";
 import pearlyxPreview from "../../../assets/portfolio/pearlyx-preview.svg";
 import studentTeacherPreview from "../../../assets/portfolio/student-teacher-preview.svg";
 import medEdgePreview from "../../../assets/portfolio/med-edge-preview.png";
+import leadScraperPreview from "../../../assets/portfolio/lead-scraper-preview.png";
 
 export const portfolioData = {
   navItems: [
@@ -16,7 +17,7 @@ export const portfolioData = {
   hero: {
     eyebrow: "Full Stack Developer · Lahore, Pakistan",
     title: "Muhammad Mujtaba Naveed",
-    subtitle: "Full-stack engineering, now powered by AI.",
+    subtitle: "",
     description:
       "I build and ship production-ready web applications with React, Next.js, Node.js, MongoDB, and PostgreSQL—plus RAG-powered AI experiences with LangChain and Google Gemini.",
     availability: "Open to product-focused full-stack engineering opportunities.",
@@ -84,6 +85,27 @@ export const portfolioData = {
       image: petsVetaPreview,
       imageAlt: "Pets Veta homepage preview",
       featured: true,
+    },
+    {
+      title: "Lead Scraper",
+      initials: "LS",
+      meta: "B2B lead discovery platform",
+      subtitle: "Search - Verify - Export",
+      description:
+        "A TypeScript-powered lead discovery dashboard for finding targeted business prospects, filtering company and contact data, tracking scraping jobs, verifying email availability, and organizing export-ready lead lists.",
+      tags: [
+        "TypeScript",
+        "React.js",
+        "REST APIs",
+        "Data Extraction",
+        "Advanced Filters",
+        "Email Verification",
+        "CSV Export",
+        "Dashboard Analytics",
+      ],
+      visualClass: "lead-scraper-gradient",
+      image: leadScraperPreview,
+      imageAlt: "Lead Scraper prospect discovery dashboard preview",
     },
     {
       title: "Med Edge",

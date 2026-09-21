@@ -41,6 +41,13 @@ const topicMap = [
     },
   },
   {
+    keys: ["lead scraper", "lead", "leads", "scraper", "prospect", "prospects", "email verification", "csv export"],
+    answer: () => {
+      const project = portfolioData.projects.find((item) => item.title === "Lead Scraper");
+      return `${project.title}: ${project.description}`;
+    },
+  },
+  {
     keys: ["med edge", "hospital", "patient", "patients", "doctor", "doctors", "clinical", "pharmacy"],
     answer: () => {
       const project = portfolioData.projects.find((item) => item.title === "Med Edge");
@@ -234,7 +241,7 @@ function getCasualReply(message) {
 function getPortfolioRelatedReply() {
   const featuredProjects = portfolioData.projects.map((project) => project.title).join(", ");
 
-  return `${portfolioData.hero.title} is a ${portfolioData.hero.subtitle}. Main projects: ${featuredProjects}. Ask about services, stack, contact, or experience.`;
+  return `${portfolioData.hero.title} is a full-stack developer. Main projects: ${featuredProjects}. Ask about services, stack, contact, or experience.`;
 }
 
 function getPriorityReply(message) {
