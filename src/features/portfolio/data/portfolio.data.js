@@ -7,32 +7,33 @@ export const portfolioData = {
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
     { label: "Education", href: "#education" },
+    { label: "Certificates", href: "#certifications" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ],
   hero: {
-    eyebrow: "Full Stack Developer",
-    title: "Muhammad Mujtaba",
-    subtitle: "MERN & PERN Stack Developer",
+    eyebrow: "Full Stack Developer · Lahore, Pakistan",
+    title: "Muhammad Mujtaba Naveed",
+    subtitle: "Full-stack engineering, now powered by AI.",
     description:
-      "I craft modern, high-performance web applications with clean code, secure APIs, and exceptional user experience. Specialized in building scalable solutions with React.js, Node.js, Express.js, MongoDB, PostgreSQL, and Prisma.",
-    availability: "Available for Associate Software Engineer, full-stack roles, and freelance projects.",
+      "I build and ship production-ready web applications with React, Next.js, Node.js, MongoDB, and PostgreSQL—plus RAG-powered AI experiences with LangChain and Google Gemini.",
+    availability: "Open to product-focused full-stack engineering opportunities.",
     primaryAction: { label: "View Projects", href: "#projects" },
     secondaryAction: { label: "Download CV", href: "/docs/Mujtaba_Cv.pdf" },
   },
   stats: [
-    { value: "2+", label: "Years of hands-on development experience" },
+    { value: "1+", label: "Years of professional full-stack experience" },
     { value: "4", label: "User workflows in Pets Veta" },
-    { value: "10+", label: "Core technologies" },
-    { value: "AI", label: "Assisted product development" },
+    { value: "25+", label: "Technologies across the stack" },
+    { value: "RAG", label: "AI engineering experience" },
   ],
   services: [
     {
       icon: "UI",
       title: "Frontend Development",
       description:
-        "Responsive React apps with readable layouts, reusable components, routing, forms, and polished interaction states.",
+        "Responsive React and Next.js products with reusable components, accessible interactions, and polished user journeys.",
     },
     {
       icon: "API",
@@ -50,7 +51,7 @@ export const portfolioData = {
       icon: "RT",
       title: "Realtime & Integrations",
       description:
-        "Socket.io notifications, Cloudinary media uploads, Nodemailer alerts, and AI-assisted features where they help the product.",
+        "RAG pipelines, LangChain, Gemini, vector search, Socket.io, Cloudinary, Stripe, and other purposeful integrations.",
     },
   ],
   projects: [
@@ -60,7 +61,7 @@ export const portfolioData = {
       meta: "Full-stack pet care platform",
       subtitle: "Marketplace - Appointments - Stripe Checkout",
       description:
-        "Pet care marketplace with e-commerce, vet appointment scheduling, secure Stripe checkout for marketplace orders and appointment bookings, admin analytics, role-based access, PostgreSQL, Prisma, JWT, and Cloudinary uploads.",
+        "A four-role pet care platform combining e-commerce, vet bookings, Stripe payments, admin analytics, and a RAG-powered pet assistant built with LangChain, pgvector, Hugging Face embeddings, and Gemini.",
       tags: [
         "React.js",
         "TypeScript",
@@ -74,6 +75,9 @@ export const portfolioData = {
         "JWT Authentication",
         "Stripe",
         "Cloudinary",
+        "LangChain",
+        "Gemini",
+        "pgvector",
       ],
       visualClass: "pets-gradient",
       image: petsVetaPreview,
@@ -132,6 +136,7 @@ export const portfolioData = {
         { name: "HTML5", level: 88 },
         { name: "CSS3", level: 86 },
         { name: "React.js", level: 88 },
+        { name: "Next.js", level: 80 },
         { name: "TypeScript", level: 78 },
         { name: "JavaScript", level: 88 },
         { name: "Tailwind CSS", level: 86 },
@@ -157,6 +162,20 @@ export const portfolioData = {
         { name: "PostgreSQL", level: 80 },
         { name: "Prisma ORM", level: 80 },
         { name: "Redis", level: 68 },
+        { name: "MySQL", level: 72 },
+      ],
+    },
+    {
+      title: "AI / LLM",
+      items: [
+        { name: "RAG", level: 78 },
+        { name: "LangChain", level: 76 },
+        { name: "Google Gemini", level: 76 },
+        { name: "Hugging Face", level: 72 },
+        { name: "Vector Embeddings", level: 74 },
+        { name: "Semantic Search", level: 74 },
+        { name: "pgvector", level: 72 },
+        { name: "Prompt Engineering", level: 80 },
       ],
     },
     {
@@ -175,16 +194,26 @@ export const portfolioData = {
         { name: "Claude", level: 76 },
         { name: "GitHub Copilot", level: 80 },
         { name: "Cursor", level: 82 },
+        { name: "Docker", level: 72 },
+        { name: "CI/CD", level: 74 },
+        { name: "Vercel", level: 82 },
       ],
     },
   ],
   experience: [
     {
-      period: "Aug 2025 - Present",
-      role: "Web Development Intern",
-      company: "Qalam Training Program",
+      period: "Aug 2026 - Present",
+      role: "Full Stack Developer",
+      company: "Arzen Inc.",
       description:
-        "Built responsive static and React interfaces, developed secure REST APIs with Node.js and Express.js, implemented CRUD workflows, and managed MongoDB/PostgreSQL databases with Prisma ORM. Worked on AI chatbot features with RAG, authentication flows, API integrations, Git/GitHub collaboration, and CI/CD-based deployment workflows.",
+        "Develop and maintain client-facing applications with React, Next.js, Node.js, and Express. Translate requirements into production features, integrate authentication and third-party services, and collaborate with clients and senior engineers through reviews and scheduled releases.",
+    },
+    {
+      period: "Aug 2025 - Aug 2026",
+      role: "Full Stack Developer Intern",
+      company: "Seebiz Pvt Ltd",
+      description:
+        "Built and tested production-grade REST APIs across 3+ projects, delivered responsive React interfaces, implemented JWT authentication, and optimized MongoDB and PostgreSQL schemas. Also explored RAG, LangChain, and prompt engineering for context-aware features.",
     },
     {
       period: "Aug 2023 - Sep 2024",
@@ -199,7 +228,7 @@ export const portfolioData = {
       degree: "Post ADP - Computer Science",
       period: "2025 - 2027",
       institution: "University of Education",
-      meta: "CGPA: 3.28 / 4.00",
+      meta: "In progress",
       description:
         "Relevant Courses: Web Development, Advanced Database Systems, Operating Systems, OOP Analysis and Design.",
     },
@@ -210,6 +239,18 @@ export const portfolioData = {
       meta: "",
       description:
         "Relevant Courses: Programming Fundamentals, OOP, Data Structures & Algorithms.",
+    },
+  ],
+  certifications: [
+    {
+      title: "Web Development Certification",
+      issuer: "Bano Qabil, Lahore",
+      year: "2025",
+    },
+    {
+      title: "Web Development Trainee",
+      issuer: "Qalam Training Program",
+      year: "Professional training",
     },
   ],
   contact: {

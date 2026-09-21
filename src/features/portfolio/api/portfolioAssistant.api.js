@@ -55,8 +55,8 @@ const topicMap = [
     },
   },
   {
-    keys: ["database", "databases", "mongodb", "mongoose", "postgresql", "prisma", "redis"],
-    answer: () => "MongoDB, Mongoose, PostgreSQL, Prisma ORM, Redis.",
+    keys: ["database", "databases", "mongodb", "mongoose", "postgresql", "prisma", "redis", "mysql", "pgvector"],
+    answer: () => "MongoDB, Mongoose, PostgreSQL, Prisma ORM, MySQL, Redis, and pgvector.",
   },
   {
     keys: ["rest api", "rest apis", "api", "apis", "routes", "controllers", "models"],
@@ -66,11 +66,11 @@ const topicMap = [
   {
     keys: ["skill", "skills", "stack", "technology", "technologies", "frontend", "backend", "mern", "pern", "tool", "tools"],
     answer: () => {
-      return "MERN/PERN full-stack web apps. Frontend: HTML5, CSS3, React.js, TypeScript, JavaScript, Tailwind CSS, Redux Toolkit, TanStack Query, React Router, Bootstrap. Backend: Node.js, Express.js, REST APIs, JWT, Bcrypt, Multer, Nodemailer, Socket.io, MongoDB, Mongoose, PostgreSQL, Prisma ORM, Redis.";
+      return "Full-stack web apps with React, Next.js, TypeScript, Node.js, Express, MongoDB, PostgreSQL, Prisma, Docker, and CI/CD—plus RAG, LangChain, Gemini, embeddings, and semantic search.";
     },
   },
   {
-    keys: ["experience", "job", "intern", "company", "qalam", "techwizard", "career", "role"],
+    keys: ["experience", "job", "intern", "company", "arzen", "seebiz", "techwizard", "career", "role"],
     answer: () =>
       portfolioData.experience
         .map((item) => `${item.role} at ${item.company} (${item.period})`)
@@ -79,7 +79,7 @@ const topicMap = [
   {
     keys: ["education", "degree", "university", "cgpa", "study", "qualification", "courses"],
     answer: () =>
-      "Post ADP - Computer Science, University of Education, CGPA: 3.28 / 4.00. ADP - Computer Science, University of the Punjab.",
+      "Post ADP in Computer Science at the University of Education (2025–2027), after an ADP in Computer Science at the University of the Punjab (2023–2025).",
   },
 ];
 
@@ -118,6 +118,11 @@ const portfolioRelatedKeywords = [
   "mongodb",
   "postgresql",
   "prisma",
+  "next.js",
+  "rag",
+  "langchain",
+  "gemini",
+  "docker",
   "api",
   "dashboard",
   "auth",

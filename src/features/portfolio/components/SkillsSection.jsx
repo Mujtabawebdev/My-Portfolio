@@ -15,7 +15,9 @@ import {
   SiJavascript,
   SiJsonwebtokens,
   SiMongodb,
+  SiMysql,
   SiMongoose,
+  SiNextdotjs,
   SiNodedotjs,
   SiOpenaigym,
   SiPostgresql,
@@ -30,17 +32,20 @@ import {
   SiSwagger,
   SiTailwindcss,
   SiTypescript,
+  SiDocker,
+  SiVercel,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import { FiLock, FiMail, FiTool, FiUploadCloud } from "react-icons/fi";
+import { FiCpu, FiGitBranch, FiLock, FiMail, FiSearch, FiTool, FiUploadCloud } from "react-icons/fi";
 
-const filters = ["All", "Frontend", "Backend", "Database", "Tools"];
-const databaseSkills = new Set(["MongoDB", "Mongoose", "PostgreSQL", "Prisma ORM", "Redis"]);
+const filters = ["All", "Frontend", "Backend", "Database", "AI / LLM", "Tools"];
+const databaseSkills = new Set(["MongoDB", "Mongoose", "PostgreSQL", "Prisma ORM", "Redis", "MySQL"]);
 
 const iconMap = {
   HTML5: SiHtml5,
   CSS3: SiCss,
   "React.js": SiReact,
+  "Next.js": SiNextdotjs,
   TypeScript: SiTypescript,
   JavaScript: SiJavascript,
   "Tailwind CSS": SiTailwindcss,
@@ -61,6 +66,15 @@ const iconMap = {
   PostgreSQL: SiPostgresql,
   "Prisma ORM": SiPrisma,
   Redis: SiRedis,
+  MySQL: SiMysql,
+  RAG: FiCpu,
+  LangChain: FiGitBranch,
+  "Google Gemini": FiCpu,
+  "Hugging Face": FiCpu,
+  "Vector Embeddings": FiSearch,
+  "Semantic Search": FiSearch,
+  pgvector: SiPostgresql,
+  "Prompt Engineering": FiCpu,
   Git: SiGit,
   GitHub: SiGithub,
   Postman: SiPostman,
@@ -73,12 +87,16 @@ const iconMap = {
   Claude: SiClaude,
   "GitHub Copilot": SiGithubcopilot,
   Cursor: SiCursor,
+  Docker: SiDocker,
+  "CI/CD": FiGitBranch,
+  Vercel: SiVercel,
 };
 
 const colorMap = {
   HTML5: "#e34f26",
   CSS3: "#663399",
   "React.js": "#61dafb",
+  "Next.js": "#ffffff",
   TypeScript: "#3178c6",
   JavaScript: "#f7df1e",
   "Tailwind CSS": "#06b6d4",
@@ -99,6 +117,15 @@ const colorMap = {
   PostgreSQL: "#4169e1",
   "Prisma ORM": "#ffffff",
   Redis: "#ff4438",
+  MySQL: "#4479a1",
+  RAG: "#a78bfa",
+  LangChain: "#2dd4bf",
+  "Google Gemini": "#8ab4f8",
+  "Hugging Face": "#ffd21e",
+  "Vector Embeddings": "#c084fc",
+  "Semantic Search": "#22d3ee",
+  pgvector: "#818cf8",
+  "Prompt Engineering": "#f472b6",
   Git: "#f05032",
   GitHub: "#ffffff",
   Postman: "#ff6c37",
@@ -111,6 +138,9 @@ const colorMap = {
   Claude: "#d97757",
   "GitHub Copilot": "#ffffff",
   Cursor: "#ffffff",
+  Docker: "#2496ed",
+  "CI/CD": "#f97316",
+  Vercel: "#ffffff",
 };
 
 export function SkillsSection({ skills }) {
@@ -120,6 +150,7 @@ export function SkillsSection({ skills }) {
     const frontend = skills.find((group) => group.title === "Frontend")?.items || [];
     const backendItems = skills.find((group) => group.title === "Backend")?.items || [];
     const tools = skills.find((group) => group.title === "Tools")?.items || [];
+    const ai = skills.find((group) => group.title === "AI / LLM")?.items || [];
     const backend = backendItems.filter((skill) => !databaseSkills.has(skill.name));
     const database = backendItems.filter((skill) => databaseSkills.has(skill.name));
 
@@ -127,13 +158,14 @@ export function SkillsSection({ skills }) {
       Frontend: frontend.map((skill) => ({ ...skill, category: "Frontend" })),
       Backend: backend.map((skill) => ({ ...skill, category: "Backend" })),
       Database: database.map((skill) => ({ ...skill, category: "Database" })),
+      "AI / LLM": ai.map((skill) => ({ ...skill, category: "AI / LLM" })),
       Tools: tools.map((skill) => ({ ...skill, category: "Tools" })),
     };
   }, [skills]);
 
   const visibleSkills =
     activeFilter === "All"
-      ? [...skillGroups.Frontend, ...skillGroups.Backend, ...skillGroups.Database, ...skillGroups.Tools]
+      ? [...skillGroups.Frontend, ...skillGroups.Backend, ...skillGroups.Database, ...skillGroups["AI / LLM"], ...skillGroups.Tools]
       : skillGroups[activeFilter];
 
   return (

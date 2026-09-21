@@ -100,7 +100,13 @@ export function ContactSection({ contact }) {
           })}
         </div>
       </motion.div>
-      <div className="contact-panel">
+      <motion.div
+        className="contact-panel"
+        initial={{ opacity: 0, x: 36 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      >
         <form
           className="contact-form"
           action="https://formsubmit.co/mujtabanaveed13@gmail.com"
@@ -132,7 +138,7 @@ export function ContactSection({ contact }) {
           ) : null}
         </form>
 
-      </div>
+      </motion.div>
     </section>
   );
 }

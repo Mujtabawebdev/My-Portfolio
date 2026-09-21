@@ -25,9 +25,23 @@ export function ProjectsSection({ projects }) {
               whileHover={{ y: -8 }}
             >
               {project.image ? (
-                <div className="project-media">
-                  <img className="project-image" src={project.image} alt={project.imageAlt || project.title} />
-                </div>
+                <motion.div
+                  className="project-media"
+                  initial={{ clipPath: "inset(0 0 100% 0)" }}
+                  whileInView={{ clipPath: "inset(0 0 0% 0)" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <motion.img
+                    className="project-image"
+                    src={project.image}
+                    alt={project.imageAlt || project.title}
+                    initial={{ scale: 1.12 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                </motion.div>
               ) : (
                 <div className={`project-top ${project.visualClass}`}>
                   <span>{project.initials}</span>

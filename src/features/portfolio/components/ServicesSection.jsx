@@ -7,21 +7,21 @@ export function ServicesSection({ services }) {
       <div className="about-copy">
         <SectionHeading eyebrow="About" title="I design and build product flows that feel deliberate, fast, and reliable." />
         <p className="about-lede">
-          I am a Full Stack Developer based in Lahore, Pakistan, with a passion for building scalable web applications.
-          I am currently pursuing a Bachelor's degree in Computer Science and continuously expanding my skills in modern
-          web technologies. I enjoy turning complex problems into elegant, user-friendly solutions.
+          I am a full-stack developer in Lahore who turns product requirements into reliable, production-ready software.
+          My work spans responsive interfaces, secure APIs, relational and document databases, real-time systems, and
+          AI-powered experiences—from initial architecture through deployment.
         </p>
         <div className="about-stats" aria-label="Portfolio highlights">
           <article>
-            <strong>2+</strong>
-            <span>Years Experience</span>
+            <strong>1+</strong>
+            <span>Years Full-stack Experience</span>
           </article>
           <article>
-            <strong>5+</strong>
-            <span>Projects Built</span>
+            <strong>3+</strong>
+            <span>Production Projects</span>
           </article>
           <article>
-            <strong>10+</strong>
+            <strong>25+</strong>
             <span>Technologies</span>
           </article>
         </div>
